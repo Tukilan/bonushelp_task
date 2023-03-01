@@ -22,16 +22,6 @@
 			return $res;
 		}
 
-		static function fetchByColumn($result,$column,$options = []){
-			$res = [];
-			if (isset($options['showRes'])) var_dump($column);
-			while ($row = mysqli_fetch_assoc($result)) {
-				$res[$row[$column]] = $row; 	
-			} 
-			
-			return $res;
-		}
-
 		static function connect(){
 			self::$BD = mysqli_connect(self::$host,self::$user,self::$db_pass,self::$db_name);
 			mysqli_set_charset(self::$BD,"utf8");
