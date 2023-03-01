@@ -38,7 +38,6 @@
 		                    // Через multi_query посылаю в базу по 1000 запросов 
 		                    foreach ($dataCsv as $value) {
 		                    	$query .= 'INSERT INTO `person`(`person_number`,`person_name`) VALUES("'.$value[0].'","'.$value[1].'");';
-		                    	$q[] = 'INSERT INTO `person`(`person_number`,`person_name`) VALUES("'.$value[0].'","'.$value[1].'");';
 		                    	$flag++;
 		                    	if ($flag == 1000){
 		                    		\DB::exec($query,['multi'=>1]);
